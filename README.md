@@ -15,12 +15,15 @@ The dataset is designed to facilitate research in urban traffic analysis, travel
 
 ## Data Access (Coming Soon)
 
-The full, anonymized dataset will be made publicly available through a permanent repository on Zenodo to ensure long-term access and proper academic citation.
+The full dataset, including all auxiliary files, is permanently hosted on Hugging Face Datasets for fast and reliable access.
 
-*   **Zenodo Repository:** `[Link will be provided here upon data upload]`
-*   **DOI for Citation:** `[DOI will be generated upon data upload]`
+*   **Hugging Face Dataset Page:** 
+    *   **[UrbanLPR-Dataset on Hugging Face](https://huggingface.co/datasets/abin1234/UrbanLPR-Dataset)** 
+    *   (Visit this page to browse files, view the dataset card, and engage in community discussions.)
 
-A small sample of the data will also be uploaded to this GitHub repository for quick preview purposes.
+*   **Direct Download Link:** 
+    *   **[Download UrbanLPR-Dataset_v1.0.zip (~1.2GB)](https://huggingface.co/datasets/abin1234/UrbanLPR-Dataset/blob/main/UrbanLPR-Dataset.zip)**
+    *   (Use this link for a direct download of the complete dataset package.)
 
 ## Abstract
 
@@ -38,18 +41,38 @@ Accurate travel time prediction is critical for effective urban traffic manageme
 *   **Time Period:** March 1, 2023 to March 20, 2023 (20 consecutive days).
 *   **Anonymization:** **All license plate numbers in the dataset have been fully anonymized.**
 
-## File Structure and Schema (Preliminary)
+## Dataset Structure
 
-The final dataset will be provided in the efficient **Parquet** format. The data will be split into manageable files (e.g., one file per day). The planned data schema is as follows:
+The dataset is provided as a single compressed package (`UrbanLPR-Dataset_v1.0.zip`) which, when unzipped, contains the following file structure:
 
-| Column Name       | Data Type | Description                                               |
-|-------------------|-----------|-----------------------------------------------------------|
-| `vehicle_id`      | `string`  | Anonymized unique vehicle identifier.                     |
-| `timestamp`       | `datetime`| The exact time a vehicle was detected.                    |
-| `intersection_id` | `integer` | A unique ID for the intersection where the vehicle was seen. |
-| `...`             | `...`     | *(More columns may be included, to be finalized soon)*    |
+```text
+UrbanLPR-Dataset_v1.0/
+├── 2023-03-01.parquet
+├── 2023-03-02.parquet
+│   ...
+├── 2023-03-20.parquet
+├── distance.csv
+├── intersection_map.jpg
+└── vehicle_type_mapping.csv
+```
 
-*This schema is preliminary and will be finalized upon data release.*
+### Main Data Files (`.parquet`)
+
+The core of the dataset consists of 20 Parquet files, each containing the anonymized traffic data for a single day from March 1 to March 20, 2023. The schema for each file is as follows:
+
+*   **`vehicle_id`** (`string`): Anonymized 64-character unique vehicle identifier, generated using a salted SHA-256 hash.
+*   **`timestamp`** (`datetime`): The exact timestamp (YYYY-MM-DD HH:MM:SS) when a vehicle was detected.
+*   **`intersection_id`** (`integer`): A unique integer ID for the intersection where the vehicle was detected.
+*   **`vehicle_type`** (`integer`): A numeric ID representing the vehicle's type. Refer to `vehicle_type_mapping.csv` for a detailed description of each ID.
+
+### Auxiliary Files
+
+To facilitate analysis and ensure reproducibility, the dataset package also includes several essential auxiliary files:
+
+*   **`distance.csv`**: A matrix file containing the road network distance (in meters) between every pair of intersections. The rows and columns are indexed by `intersection_id`. This file is crucial for any graph-based modeling or path reconstruction analysis.
+*   **`intersection_map.jpg`**: A high-resolution map of the study area in Dongguan. Each traffic intersection used in this study is clearly marked and labeled with its corresponding `intersection_id`, providing a visual reference for the road network's topology.
+*   **`vehicle_type_mapping.csv`**: A mapping table that translates the numeric `vehicle_type` IDs found in the main data files into human-readable descriptions. It includes columns for the ID (`vehicle_type`), the Chinese name (`type_name_zh`), and the English name (`type_name_en`).
+
 
 ## How to Cite (Preliminary)
 
