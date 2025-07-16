@@ -24,7 +24,12 @@ A small sample of the data will also be uploaded to this GitHub repository for q
 
 ## Abstract
 
+<details>
+<summary><strong>Click to view the Abstract from the paper</strong></summary>
+
 Accurate travel time prediction is critical for effective urban traffic management and route planning. However, few studies address travel time prediction in sparsely sensored regions. To address this gap, we propose a novel ``node-link-network'' framework for urban road network travel time prediction, which integrates sparse node data, path reconstruction, and network-level prediction. Using license plate data collected at intersections (node level), the framework employs a Path Reconstruction Random Forest (PRRF) model to innovatively reconstruct spatiotemporal path data (link level) with multi-factor features and quantify the weights of network spatial relationships. Leveraging these reconstructed paths, a Weighted Graph Convolutional Network with Bidirectional Long Short-Term Memory (WGCN-BiLSTM) employs dynamic weighted adjacency matrices to model spatiotemporal dependencies for accurate travel time prediction (network level). Results on the UrbanLPR dataset, collected in Dongguan, China demonstrate that our reconstruction model achieves a training time of 2.42 seconds, over 10 times faster than baseline models. Based on the reconstructed weighted matrices, our method reduces MAE by 23\% (to 6.46 seconds) compared to the second-best baseline, addressing travel time prediction in sparsely sensored regions and improving travel time prediction for urban traffic management.
+
+</details>
 
 ## Dataset Details
 
