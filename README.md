@@ -13,7 +13,7 @@ This repository provides the documentation for the **UrbanLPR Dataset**, a large
 
 The dataset is designed to facilitate research in urban traffic analysis, travel time estimation, path reconstruction, and spatiotemporal data mining, especially in environments with sparse sensor coverage.
 
-## Data Access (Coming Soon)
+## Data Access
 
 The full dataset, including all auxiliary files, is permanently hosted on Hugging Face Datasets for fast and reliable access.
 
