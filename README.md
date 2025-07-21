@@ -78,7 +78,7 @@ To facilitate analysis and ensure reproducibility, the dataset package also incl
 
 If you use this dataset or our methodology in your research, please cite our paper and the dataset itself.
 
-**1. Paper Citation:**
+**Paper Citation:**
 ```bibtex
 
 @article{qi2025urban,
