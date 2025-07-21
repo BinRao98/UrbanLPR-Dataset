@@ -81,3 +81,11 @@ If you use this dataset or our methodology in your research, please cite our pap
 **1. Paper Citation:**
 ```bibtex
 
+@article{qi2025urban,
+  title={Urban road network travel time prediction method based on “node-link-network” spatiotemporal reconstruction: A license plate data-driven WGCN-BiLSTM model},
+  author={Qi, Weiwei and Rao, Bin and Wu, Jiabing},
+  journal={Measurement},
+  pages={118339},
+  year={2025},
+  publisher={Elsevier}
+}
